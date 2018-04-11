@@ -1,2 +1,45 @@
-.footer
+footer
+    background-color: $color-primary
     display: flex
+    align-items: center
+    flex-flow: row wrap
+    justify-content: space-between
+    padding: $padding-1
+    width: 100%
+    @media only screen and (max-width: 769px)
+        padding: $mobile-padding-1
+    h3, nav
+        width: 50%
+        flex: 0 0 50%
+    nav
+        color: $color-white
+        display: flex
+        flex-flow: row wrap
+        height: 100%
+        .brand
+            color: white
+            text-decoration: none
+            font-size: 1.25em
+        ul
+            margin: 0
+            padding: 0
+            li
+                float: left
+                list-style-type: none
+                margin-right: 20px
+    a
+        text-decoration: none
+        color: $color-white
+        &:hover 
+            color: #ede
+.footnote
+    background: $color-white
+    color: $color-primary
+    text-align: center
+    width: 100%
+
+.resilient-coders
+    color: $color-primary
+    text-decoration: none
+    &:hover 
+        color: #ed1b24

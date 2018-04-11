@@ -1,16 +1,16 @@
-<footer class="footer">
-  <div class="container">
-    <?php get_template_part('templates/components/logo'); ?>
-    <nav class="nav-primary">
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-      else: 
-        $MainMenu = array('menu'=> 'Main Menu', 'container' => false,
-        'container_class' => false, 'menu_class' => false, );
-        wp_nav_menu($MainMenu);
-      endif;
-      ?>
-    </nav>
-  </div>
+<footer>
+  <h3>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php echo bloginfo($show = 'name'); ?></a>
+  </h3>
+  <nav>
+    <?php
+      $args = array('menu_class' => 'menu', 'container' => false);
+      wp_nav_menu($args);
+    ?>
+  </nav>
 </footer>
+<p class="footnote">
+  Designed and Developed by 
+    <a href="https://www.resilientcoders.org" class="resilient-coders" target="_blank">Resilient Coders</a>
+    &copy; <?php echo date("Y"); ?> <?php echo bloginfo($show = 'name'); ?>
+</p>

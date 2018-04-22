@@ -1,0 +1,25 @@
+.columns
+    display: flex
+    justify-content: center
+    flex-flow: row wrap
+    @include inner-container($max-row-width)
+    .column-link
+        margin: 5px
+        @include media-breakpoint-down(xl)
+            flex: 0 0 calc( (100% / 8 ) - 10px)
+            width: calc( (100% / 8 ) - 10px)
+        @include media-breakpoint-down(lg)
+            flex: 0 0 calc( (100% / 6 ) - 10px)
+            width: calc( (100% / 6 ) - 10px)
+        @include media-breakpoint-down(md)
+            flex: 0 0 calc( (100% / 5 ) - 10px)
+            width: calc( (100% / 5 ) - 10px)
+        @include media-breakpoint-down(sm)
+            flex: 0 0 calc( (100% / 3 ) - 10px)
+            width: calc( (100% / 3 ) - 10px)
+        @include media-breakpoint-down(sm)
+            flex: 0 0 calc( (100% / 2 ) - 10px)
+            width: calc( (100% / 2 ) - 10px)
+    .column-image
+        height: auto
+        width: 100%

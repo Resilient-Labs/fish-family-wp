@@ -1,0 +1,186 @@
+@include media-breakpoint-up(sm)
+    .initiatives-collage-container
+        position: relative
+        width: 100vw
+        height: 71.582vw
+        margin: 0 auto
+        float: left
+        margin: 0 -15px
+        max-width: calc(100% + 30px)
+
+        > div
+            position: absolute
+            overflow: hidden
+            border: 1px solid $color-white
+            &:hover.primary-initiative 
+                transition: all 300ms ease-in-out
+                &:before
+                    background-color: rgba(91, 91, 91, 0.4)
+                    bottom: -100%
+                    transition: all 300ms ease-in-out
+            &:before
+                content: ""
+                background-color: rgba(51, 51, 51, 0.4)
+                z-index: 1
+                display: block
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 0
+                right: 0
+
+            a
+                text-decoration-line: none
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                &:hover 
+                    .initiative-title
+                        margin-top: 1em
+                    .line-break
+                        width: 120px
+                        display: block
+                &:before
+                    content: ""
+                    z-index: 2
+                    display: block
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
+
+            img
+                // position: absolute
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center
+
+            .line-break, .initiative-title
+                position: absolute
+                z-index: 3
+                text-align: center
+                color: $color-white
+                font-family: Lora
+                font-size: 24px
+                padding: 15px
+                transition: all 300ms ease-in-out
+
+            .line-break
+                left: 0
+                right: 0
+                width: 75px
+                margin: -30px auto
+                border-bottom: 2px solid $color-white
+
+            .initiative-title 
+                left: 0
+                right: 0
+                margin: 0 auto
+
+        > div:nth-of-type(1)
+            top: 0
+            left: 0
+            width: 50%
+            height: 50%
+
+        > div:nth-of-type(2)
+            top: 0
+            left: 50%
+            width: 50%
+            height: 25%
+
+        > div:nth-of-type(6)
+            top: 25%
+            left: 50%
+            width: 25%
+            height: 25%
+
+        > div:nth-of-type(5)
+            top: 25%
+            left: 75%
+            width: 25%
+            height: 75%
+
+        > div:nth-of-type(4)
+            top: 50%
+            left: 0
+            width: 25%
+            height: 50%
+
+        > div:nth-of-type(3)
+            position: absolute
+            top: 50%
+            left: 25%
+            width: 50%
+            height: 50%
+
+@include media-breakpoint-down(xs)
+    .initiatives-collage-container
+        width: 100%
+        .primary-initiative
+            &:hover
+                transition: all 300ms ease-in-out
+                &:before
+                    background-color: rgba(91, 91, 91, 0.4)
+                    bottom: -100%
+                    transition: all 300ms ease-in-out
+            &:before
+                content: ""
+                background-color: rgba(51, 51, 51, 0.4)
+                z-index: 1
+                display: block
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 0
+                right: 0
+        .primary-initiative,
+        .secondary-initiative
+            width: 100%
+            position: relative
+            overflow: hidden
+            border: 1px solid $color-white
+            img 
+                width: 100%
+                height: auto
+            a
+                text-decoration-line: none
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                &:before
+                    content: ""
+                    z-index: 2
+                    display: block
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
+            .info
+                position: absolute
+                z-index: 3
+                left: 0
+                right: 0
+                top: 50%
+                text-align: center
+                margin: 0 auto
+            .initiative-title
+                width: 100%
+                display: block
+            .line-break, .initiative-title
+                font-size: 1em
+                color: $color-white
+                text-align: center
+                margin: 0 auto
+                
+            .line-break
+                width: 40px
+                margin: 0px auto
+                border-bottom: 2px solid $color-white

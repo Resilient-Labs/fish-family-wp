@@ -6,16 +6,21 @@ footer
     justify-content: space-between
     padding: $padding-1
     width: 100%
-    @media only screen and (max-width: 769px)
+    @include media-breakpoint-down(sm)
         padding: $mobile-padding-1
     h3, nav
         width: 50%
         flex: 0 0 50%
+        @include media-breakpoint-down(md)
+            width: 100%
+            flex: 0 0 100%
     nav
         color: $color-white
         display: flex
         flex-flow: row wrap
         height: 100%
+        @include media-breakpoint-up(lg)
+            justify-content: flex-end
         .brand
             color: white
             text-decoration: none
@@ -23,15 +28,25 @@ footer
         ul
             margin: 0
             padding: 0
+            display: flex
+            flex-flow: row wrap
             li
-                float: left
+                flex: 0 0 calc(25% - 20px)
                 list-style-type: none
-                margin-right: 20px
+                margin: 0 10px
+                @include media-breakpoint-down(md)
+                    flex: 0 0 calc(33.3333% - 10px)
+                    margin-left: 0
+                @include media-breakpoint-down(xs)
+                    margin: 0
+                    flex: 0 0 50%
     a
         text-decoration: none
         color: $color-white
-        &:hover 
-            color: #ede
+        &:hover
+            text-decoration: none
+            color: $color-white
+
 .footnote
     background: $color-white
     color: $color-primary

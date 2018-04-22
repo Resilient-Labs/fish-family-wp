@@ -1,2 +1,120 @@
 .header
     display: flex
+    justify-content: space-between
+    border-bottom: 1px solid $color-gray
+    padding: $padding-1
+    flex-flow: row wrap
+    @include media-breakpoint-down(xs)
+        padding: $mobile-padding-1
+    .logo-wrapper
+        color: $color-black
+        text-decoration: none
+    .logotype
+        font-size: 1.5em
+        @include media-breakpoint-down(xs)
+            font-size: 1.15em
+    .nav
+        @include media-breakpoint-down(xs)
+            display: flex
+            justify-content: space-between
+            // width: 100%
+        ul  
+
+        ul,li  
+            margin: 0
+            padding: 0
+            list-style-type: none
+        > ul 
+            display: flex
+            justify-content: space-between
+            align-items: center
+            @include media-breakpoint-down(sm)
+                display: none
+            > li
+                margin: 0 10px
+                &:nth-of-type(n+4)
+                    display: none
+    .menu-ui
+        height: 100vh
+        width: 50vw
+        position: absolute
+        right: -100%
+        background: $color-white
+        transition: all 300ms ease-in-out
+        top: 0
+        box-shadow: $box-shadow-1
+        position: fixed
+        @include media-breakpoint-down(sm)
+            width: 90vw
+        .menu-icon
+            color: $color-gray
+            cursor: pointer
+            z-index: 1000
+            position: absolute
+            top: $padding-1
+            right: $padding-1
+            @include media-breakpoint-down(sm)
+                top: $mobile-padding-1
+                right: $mobile-padding-1
+        ul  
+            padding-top: 60px
+            max-height: 50vh
+            overflow-y: scroll
+        li 
+            text-align: center
+            a  
+                color: $color-gray
+                font-size: 24px
+            
+    .menu-label
+        cursor: pointer
+        margin: 0
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        .menu-icon
+            border: 1px solid $color-gray
+            border-radius: 3px
+            padding: 5px
+        input
+            display: none
+            &:checked
+                ~ .menu-ui
+                    cursor: auto
+                    visibility: visible
+                    display: block
+                    right: 0
+                    z-index: 999
+                ~ .menu-ui-overlay
+                    animation: overlay 300ms 1
+                    background-color: rgba(0,0,0,0.44)
+                    cursor: initial
+                    width: 100vw
+                    height: 100vh
+                    position: absolute
+                    top: 0
+                    left: 0
+                    position: fixed
+                    z-index: 998
+    .contact
+        position: absolute
+        bottom: 0
+        padding: $padding-1
+        width: 100%
+        @include media-breakpoint-down(sm)
+            padding: $mobile-padding-1
+        label
+            color: #666
+            font-size: 0.8em
+            font-weight: 700
+            margin: 0
+            text-transform: uppercase
+        h5, h6, p, small
+            color: $color-med-gray
+            margin: 10px 0
+
+@keyframes overlay
+    0%
+        background-color: rgba(0,0,0,0.0)
+    100%
+        background-color: rgba(0,0,0,0.44)

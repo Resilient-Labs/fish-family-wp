@@ -6,7 +6,7 @@
 
 <?php if ( have_posts() ) :?>
     <?php while ( have_posts() ) : the_post(); ?>
-        <section class="template main-layout container-fluid">
+        <section class="template main-layout">
             <?php
             // check if the flexible content field has rows of data
             if( have_rows('main_layout') ):
@@ -17,12 +17,21 @@
                     elseif (get_row_layout() == 'content'):
                         get_template_part('templates/components/content');
                     elseif (get_row_layout() == 'cta_banner'):
-                        get_template_part('templates/components/content');
+                        get_template_part('templates/components/cta-banner');
+                    elseif (get_row_layout() == 'linked_content'):
+                        get_template_part('templates/components/linked-content');
+                    elseif (get_row_layout() == 'photo_banner'):
+                        get_template_part('templates/components/photo-banner');
+                    elseif (get_row_layout() == 'collage') :
+                        get_template_part('templates/components/collage');
+                    elseif (get_row_layout() == 'columns') :
+                        get_template_part('templates/components/columns');
                     endif;
                 endwhile; // endwhile
             else : ?>
-                 <p>no layouts found</p>
+                <?php get_template_part('templates/components/empty-state'); ?>
             <?php endif; ?>
+
         </section>
     <?php endwhile; ?>
 <?php endif; ?>

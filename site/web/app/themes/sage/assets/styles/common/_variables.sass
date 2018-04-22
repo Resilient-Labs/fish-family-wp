@@ -2,6 +2,8 @@
 $color-black: #000
 $color-white: #FFF
 $color-gray: #CCC
+$color-dark-gray: #333
+$color-med-gray: #A6A6A6
 $color-primary: #2F80ED
 $color-secondary: green
 $color-tertiary: blue
@@ -9,3 +11,22 @@ $color-tertiary: blue
 // Padding
 $padding-1: 30px
 $mobile-padding-1: 15px
+
+// Max width
+$max-row-width: 1140px
+$max-content-width: 716px
+
+// Box shadows
+$box-shadow-1: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+// Mixins
+@mixin container-row($max-width)
+    margin: 0 auto 
+    max-width: $max-width
+    padding: $padding-1
+    @include media-breakpoint-down(sm)
+        padding: 0
+        
+@mixin inner-container($max-width)
+    margin: 0 auto
+    max-width: $max-width

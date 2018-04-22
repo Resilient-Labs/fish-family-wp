@@ -1,6 +1,8 @@
 <footer>
   <h3>
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php echo bloginfo($show = 'name'); ?></a>
+    <a class="brand logotype" href="<?= esc_url(home_url('/')); ?>">
+      <?php echo bloginfo($show = 'name'); ?>
+    </a>
   </h3>
   <nav>
     <?php

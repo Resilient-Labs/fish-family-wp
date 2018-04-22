@@ -4,18 +4,28 @@ input[type="button"]
     font-family: 'Open Sans', Helvetica, sans-serif
 
 button, input[type=submit], input[type=button]
-  border: 0
-  border: none
-  cursor: pointer
-  font-family: 'Open Sans', Helvetica, sans-serif
-  line-height: normal
-  overflow: visible
-  padding: 0
-  -webkit-appearance: button 
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  vertical-align: middle
-  white-space: normal
-  &:focus
-    outline: none
+    border: 0
+    border: none
+    cursor: pointer
+    font-family: 'Open Sans', Helvetica, sans-serif
+    line-height: normal
+    overflow: visible
+    padding: 0
+    -webkit-appearance: button 
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    vertical-align: middle
+    white-space: normal
+    &:focus
+        outline: none
+    &.bttn 
+        background: $color-white
+        border: 1px solid $color-dark-gray
+        border-radius: 3px
+        color: $color-dark-gray
+        padding: 10px 20px
+        &:hover
+            background: $color-dark-gray
+            color: $color-white
+            transition: all 200ms ease-in-out

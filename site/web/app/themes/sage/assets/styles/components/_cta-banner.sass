@@ -1,0 +1,23 @@
+.cta-banner
+    display: flex
+    min-height: 200px
+    flex-flow: row wrap
+    width: calc(100% + 30px)
+    margin: 0 -15px
+    div
+        width: 50%
+        flex: 0 0 50%
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        padding: $padding-1
+        @include media-breakpoint-down(sm)
+            width: 100%
+            flex: 0 0 100%
+        &:first-of-type
+            background: $color-primary
+            color: $color-white
+            text-align: center
+        &:nth-of-type(2)
+            @include media-breakpoint-down(sm)
+                padding: 15px

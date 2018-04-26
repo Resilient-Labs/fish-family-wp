@@ -8,12 +8,20 @@ footer
     width: 100%
     @include media-breakpoint-down(sm)
         padding: $mobile-padding-1
-    h3, nav
+    .logotype
+        font-size: 1.5em
+        border-bottom: 1px solid $color-white
+        @include media-breakpoint-down(xs)
+            font-size: 1.15em
+    section, nav
         width: 50%
         flex: 0 0 50%
         @include media-breakpoint-down(md)
             width: 100%
             flex: 0 0 100%
+        p  
+            color: $color-light-gray!important
+            margin: 0
     nav
         color: $color-white
         display: flex

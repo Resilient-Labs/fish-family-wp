@@ -25,15 +25,18 @@
         endif;
         ?>
         <section class="contact">
+          <?php $email = get_the_author_meta( 'user_email', 1 );?>
           <label>Email</label>
           <p>
-            <?php echo the_author_meta( 'user_email', 1 );?>
+            <?php echo $email;?>
           </p> 
+          <?php $phone = get_the_author_meta( 'user_url', 1 ); ?>
+          <?php if ($phone) : ?>
           <label>Reach Out</label>
-          <p>
-            <?php $phone = get_the_author_meta( 'user_url', 1 ); ?>
-            <?php echo str_replace('http://', '',  $phone);?>
-          </p>
+            <p>
+              <?php echo str_replace('http://', '',  $phone);?>
+            </p>
+          <?php endif; ?>
           <label>Find Us</label> 
           <p>
           <?php  echo the_author_meta( 'description', 1 ); // Displays the author description added in Biographical Info ?>
